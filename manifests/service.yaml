@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cts1
+  namespace: namespace-workflow-1698721193924
+spec:
+  type: LoadBalancer
+  selector:
+    app: cts1
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

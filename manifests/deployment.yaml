@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cts1
+  labels:
+    app: cts1
+  namespace: namespace-workflow-1698721193924
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cts1
+  template:
+    metadata:
+      labels:
+        app: cts1
+    spec:
+      containers:
+        - name: cts1
+          image: acrworkflow1698721193924.azurecr.io/image-workflow-1698721193924:latest
+          ports:
+            - containerPort: 3000
